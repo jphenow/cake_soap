@@ -60,19 +60,6 @@ p.footer{
 	padding: 20px;
 }
 
-tr:nth-child(odd){
-	background-color:#eee;
-}
-tr:nth-child(odd):hover{
-	background-color:#747E80;
-	color: white;
-}
-tr:nth-child(even){
-	background-color:#fff;
-}
-tr:nth-child(even):hover{
-	background-color:#D5E1DD;
-}
 /** nav **/
 #nav{
 	margin: 10px;
@@ -137,12 +124,6 @@ p.error em {
 	background: green;
 	color: #fff;
 }
-table{
-	width: 200px;
-	height: auto;
-	border: 1px solid #d0d0d0;
-	margin: 10px 10px;
-}
 .arrow{
 	width: 23px;
 	height: 24px;
@@ -158,9 +139,59 @@ table{
 .clicked{
 	background-image: url(../img/up_clicked.png);
 }
-#vote{
-	display: none;
-}
 .game_id{
 	display: none;
+	visibility: hidden;
+}
+#ays{
+	display:none;
+}
+.bag{
+	width: 25px;
+	height: 25px;
+	float: left;
+	padding-left: 2px;
+}
+.bag:hover{
+	cursor: pointer;
+}
+.owned{
+	background-image: url(../img/owned.png);
+}
+.not_owned{
+	background-image: url(../img/not_owned.png);
+}
+
+#owned_table{
+	float:left;
+	padding: 0px 15px;
+}
+#wanted_table{
+	padding: 10px 15px;
+}
+#wanted_table table{
+	width:350px;
+}
+tr:nth-child(odd){
+	background-color:#eee;
+}
+tr:nth-child(odd):hover{
+	background-color:#747E80;
+	color: white;
+}
+tr:nth-child(even){
+	background-color:#fff;
+}
+tr:nth-child(even):hover{
+	background-color:#D5E1DD;
+}
+#voteTH{
+	width: 80px;
+}
+table{
+	width: 175px;
+	height: auto;
+	border: 1px solid #d0d0d0;
+	margin: 10px 10px;
+	position:relative;
 }

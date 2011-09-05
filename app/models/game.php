@@ -25,6 +25,10 @@ class Game extends AppModel {
 		return false;
 	}
 
+	function moveOwned($id){
+		return $this->setGotIt(array(self::$KEY, $id));
+	}
+
 	function castVote($id){
 		return $this->addVote(array(self::$KEY, $id));
 	}
@@ -34,7 +38,7 @@ class Game extends AppModel {
 	}
 
 	function cakeAddGame($title) {
-		$this->addGame(array(self::$KEY, $title));
+		return $this->addGame(array(self::$KEY, $title));
 	}
 
 	private function cakeGetGames() {
