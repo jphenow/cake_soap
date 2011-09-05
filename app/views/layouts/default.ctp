@@ -5,19 +5,20 @@
 	<title>
 		<?php echo $title_for_layout; ?>
 	</title>
-	<?php
-		echo $this->Html->meta('icon');
+<?php
+echo $this->Html->meta('icon');
 
-		// in app/webroot/css
-		echo $this->Html->css('nerdery');
-		//echo $scripts_for_layout;
-		//if(isset($cssIncludes)){
+// in app/webroot/css
+echo $this->Html->css('nerdery');
+
+// Set per controller action see game_controller.php index()
 if(isset($cssIncludes)){
 	foreach($cssIncludes as $css){
 		echo $html->css($css);
 	}
 }
 
+// Set per controller action see game_controller.php index()
 if(isset($jsIncludes)){
 	foreach($jsIncludes as $js){
 		echo $javascript->link($js);

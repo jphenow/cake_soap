@@ -1,4 +1,10 @@
 <?php
+/* The core class for this app
+ * Allows for adding games, voting on games, marking as owned,
+ * all regulated by a timed cookie
+ * Model: /app/models/game.php
+ * Views: /app/views/game/*
+ */
 class GameController extends AppController {
 	
 	var $name = "Game";
