@@ -25,6 +25,10 @@ class Game extends AppModel {
 		return false;
 	}
 
+	function cakeClearGames(){
+		return $this->clearGames(array(self::$KEY));
+	}
+
 	function cakeAddGame($title) {
 		$this->addGame(array(self::$KEY, $title));
 	}
