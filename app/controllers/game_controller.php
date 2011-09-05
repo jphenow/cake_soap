@@ -118,7 +118,8 @@ class GameController extends AppController {
 	 * check if the user has performed an action today
 	 */
 	function _acted(){
-		$this->Cookie->write('action', 'true');
+		$this->Cookie->write('action', 'true', false, time()-mktime(23,59,59));
+							//Var,		val, encrypt?, seconds (may be off based on server date)
 	}
 
 	/* Checks Cookie for whether user has acted yet today
@@ -129,4 +130,5 @@ class GameController extends AppController {
 		}
 		else return true;
 	}
+
 }
