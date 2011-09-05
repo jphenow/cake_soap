@@ -79,6 +79,7 @@ p.footer{
 #addGameLink{
 	padding: 15px;
 }
+
 /** Notices and Errors **/
 div.message {
 	clear: both;
@@ -124,6 +125,8 @@ p.error em {
 	background: green;
 	color: #fff;
 }
+
+/* votes and setting owned */
 .arrow{
 	width: 23px;
 	height: 24px;
@@ -162,6 +165,7 @@ p.error em {
 	background-image: url(../img/not_owned.png);
 }
 
+/* tables */
 #owned_table{
 	float:left;
 	padding: 0px 15px;
