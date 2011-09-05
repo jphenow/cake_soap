@@ -23,9 +23,17 @@ Owned!
 	</tr>
 	<?php foreach ($wanted as $game):?>
 	<tr>
-		<td><div class="arrow unclicked"></div> <?php echo $game->votes;?></td>
+		<td><div class="arrow unclicked"></div> 
+			<?php echo $game->votes;?>
+			<div class="game_id"><?php echo $game->id; ?></div>
+		</td>
 		<td><?php echo $game->title; ?></td>
 	</tr>
 	<?php endforeach?>
 </table>
 <div id="vote">Are you sure you want to use your <b>one</b> vote of the day?</div>
+<?php
+echo $this->Form->create();
+echo $this->Form->hidden('vote');
+echo $this->Form->end();
+?>

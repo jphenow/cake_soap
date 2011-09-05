@@ -12,13 +12,20 @@ $(document).ready(function() {
 				hide: 'drop',
 				buttons: {
 					"Submit": function() {
-						
+						var game_id = $(original_arrow).siblings(".game_id").html();
+						$('#GameVote').val(game_id);
+						$('form#GameIndexForm').submit();
 					},
 					"Cancel": function() {
 						$('#vote').dialog('close');
 						$(original_arrow).click();
 					}
+				},
+				close: function() {
+					$('#vote').dialog('close');
+					$(original_arrow).click();
 				}
+
 			});
 		} else{
 			$(this).removeClass('clicked');
