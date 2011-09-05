@@ -1,17 +1,33 @@
 <?php
 class GameController extends AppController {
 
-	var $components = array('RequestHandler');
-	protected static $key = '11cadcc1719928fc5ec3d68ce7a24de0';
 	var $name = "Game";
+	var $helpers = array('Html', 'Javascript');
+	var $components = array('RequestHandler');
 
 	function index(){
-		global $key;
-		$owned = $this->Game->getOwned();
-		$wanted = $this->Game->getWanted();
-		$this->set('owned', $owned);
-		$this->set('wanted', $wanted);
-		$this->render();
+		if (!$this->RequestHandler->isPost()){
+			$owned = $this->Game->getOwned();
+			$wanted = $this->Game->getWanted();
+			$this->set('owned', $owned);
+			$this->set('wanted', $wanted);
+			$this->set('cssIncludes', array('ui-lightness/jquery-ui-1.8.16.custom'));
+			$this->set('jsIncludes', array('jquery-1.6.2.min', 'jquery-ui-1.8.16.custom.min', 'game'));
+			$this->render();
+		}
+		else if(!is_null($this->data['Game']['vote'])){
+			$this->Game->castVote(intval($this->data['Game']['vote']));
+			$this->Session->setFlash('You successfully used your daily action', 'flash_success');
+			$this->redirect(array('controller'=>'Game', 'action'=>'index'));
+		}
+		else if(!is_null($this->data['Game']['move_owned'])){
+
+		}
+	}
+
+	function clear(){
+		$this->Game->cakeClearGames();
+		$this->redirect(array('controller'=>'Game', 'action'=>'index'));
 	}
 
 	function add(){
@@ -21,12 +37,12 @@ class GameController extends AppController {
 		else{
 			$title = $this->data['Game']['title'];
 			if ($this->Game->hasTitle($title)) {
-				$this->Session->setFlash('We appear to already have this tile listed', 'flash_failure');
+				$this->Session->setFlash('We appear to already have this title listed', 'flash_failure');
 				$this->redirect(array('controller'=>'Game', 'action'=>'index'));
 			}
 			else {
 				$this->Game->cakeAddGame($title);
-				$this->Session->setFlash('Youve successfully added the new title', 'flash_success');
+				$this->Session->setFlash('You successfully added the new title', 'flash_success');
 				$this->redirect(array('controller'=>'Game', 'action'=>'index'));
 			}
 		}

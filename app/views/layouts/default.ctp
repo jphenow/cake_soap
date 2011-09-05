@@ -11,7 +11,19 @@
 		// in app/webroot/css
 		echo $this->Html->css('nerdery');
 		//echo $scripts_for_layout;
-	?>
+		//if(isset($cssIncludes)){
+if(isset($cssIncludes)){
+	foreach($cssIncludes as $css){
+		echo $html->css($css);
+	}
+}
+
+if(isset($jsIncludes)){
+	foreach($jsIncludes as $js){
+		echo $javascript->link($js);
+	}
+}
+?>
 
 </head>
 <body>

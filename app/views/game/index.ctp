@@ -1,15 +1,8 @@
-<style type="text/css" media="screen">
-table{
-	width: 200px;
-	height: auto;
-	border: 1px solid #d0d0d0;
-	margin: 10px 10px;
-}
-</style>
+<? echo $javascript->link('global'); ?>
 <div id="addGameLink">
 	<?php echo $this->Html->link('Add Game', array('controller'=>'Game', 'action'=>'add'));?>
+	<?php echo $this->Html->link('Clear Games', array('controller'=>'Game', 'action'=>'clear'));?>
 </div>
-<div class="arrow"></div>
 Owned!
 <table>
 	<tr>
@@ -25,13 +18,22 @@ Owned!
 	Wanted!
 	<table>
 	<tr>
-		<th>Title</th>
 		<th>Votes</th>
+		<th>Title</th>
 	</tr>
 	<?php foreach ($wanted as $game):?>
 	<tr>
+		<td><div class="arrow unclicked"></div> 
+			<?php echo $game->votes;?>
+			<div class="game_id"><?php echo $game->id; ?></div>
+		</td>
 		<td><?php echo $game->title; ?></td>
-		<td><?php echo $game->votes;?></td>
 	</tr>
 	<?php endforeach?>
 </table>
+<div id="vote">Are you sure you want to use your <b>one</b> vote of the day?</div>
+<?php
+echo $this->Form->create();
+echo $this->Form->hidden('vote');
+echo $this->Form->end();
+?>
