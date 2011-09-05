@@ -13,6 +13,7 @@ a {
 	color: #003399;
 	background-color: transparent;
 	font-weight: normal;
+	padding: 5px;
 }
 
 h1 {
@@ -63,15 +64,14 @@ tr:nth-child(odd){
 	background-color:#eee;
 }
 tr:nth-child(odd):hover{
-	background-color:#E13300;
+	background-color:#747E80;
 	color: white;
 }
 tr:nth-child(even){
 	background-color:#fff;
 }
 tr:nth-child(even):hover{
-	background-color:#E13300;
-	color: white;
+	background-color:#D5E1DD;
 }
 /** nav **/
 #nav{
@@ -101,6 +101,7 @@ div.message {
 	margin: 0 0 1em 0;
 	background: #c73e14;
 	padding: 5px;
+	text-align: center;
 }
 div.error-message {
 	clear: both;
@@ -135,4 +136,28 @@ p.error em {
 .success {
 	background: green;
 	color: #fff;
+}
+table{
+	width: 200px;
+	height: auto;
+	border: 1px solid #d0d0d0;
+	margin: 10px 10px;
+}
+.arrow{
+	width: 23px;
+	height: 24px;
+	float: left;
+	padding-left: 2px;
+}
+.arrow:hover{
+	cursor: pointer;
+}
+.unclicked{
+	background-image: url(../img/up_unclicked.png);
+}
+.clicked{
+	background-image: url(../img/up_clicked.png);
+}
+#vote{
+	display: none;
 }
