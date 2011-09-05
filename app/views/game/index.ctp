@@ -1,11 +1,10 @@
-<? echo $javascript->link('global'); ?>
 <div id="addGameLink">
 	<?php echo $this->Html->link('Add Game', array('controller'=>'Game', 'action'=>'add'));?>
 	<?php echo $this->Html->link('Clear Games', array('controller'=>'Game', 'action'=>'clear'));?>
 </div>
 
 <div id="owned_table">
-Owned! 
+Owned!
 <table>
 	<tr>
 		<th>Title</th>
@@ -39,6 +38,7 @@ Wanted!
 </div>
 <div id="ays">Are you sure you want to use your <b>one</b> action of the day?</div>
 <?php
+// Quick little way to allow posting our votes or game moves
 echo $this->Form->create();
 echo $this->Form->hidden('vote');
 echo $this->Form->hidden('moveOwned');
