@@ -50,7 +50,7 @@ class GameController extends AppController {
 			$this->set('wanted', $wanted);
 			$this->set('cssIncludes', array('ui-lightness/jquery-ui-1.8.16.custom')); // Page specific css and js
 			// both css and js reside in /app/webroot/{css,js}
-			$this->set('jsIncludes', array('jquery-1.6.2.min', 'jquery-ui-1.8.16.custom.min', 'game'));
+			$this->set('jsIncludes', array('jquery-1.6.2.min', 'jquery.tablesorter.min', 'jquery-ui-1.8.16.custom.min', 'game'));
 			$this->render(); // renders /app/views/game/index.ctp
 		}
 	}
@@ -123,7 +123,7 @@ class GameController extends AppController {
 	 * check if the user has performed an action today
 	 */
 	function _acted(){
-		$this->Cookie->write('action', 'true', false, time()-mktime(23,59,59));
+		$this->Cookie->write('action', 'true', false, mktime(23,59,59)-time());
 							//Var,		val, encrypt?, seconds (may be off based on server date)
 	}
 
