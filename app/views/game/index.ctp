@@ -1,24 +1,31 @@
 <div id="owned_table">
 <h2>Owned!</h2>
-<table>
+<table class="tablesorter">
+	<thead>
 	<tr>
 		<th>Title</th>
 	</tr>
+	</thead>
+	<tbody>
 	<?php foreach ($owned as $game):?>
 	<tr>
 		<td><?php echo $game->title; ?></td>
 	</tr>
 	<?php endforeach?>
+	</tbody>
 </table>
 </div>
 
 <div id="wanted_table">
 <h2>Wanted!</h2>
-<table>
+<table class="tablesorter">
+	<thead>
 	<tr>
 		<th id="voteTH">Votes</th>
 		<th>Title</th>
 	</tr>
+	</thead>
+	<tbody>
 	<?php foreach ($wanted as $game):?>
 	<tr>
 		<td><div class="arrow unclicked"></div>
@@ -29,6 +36,7 @@
 		<td><?php echo $game->title; ?></td>
 	</tr>
 	<?php endforeach?>
+	</tbody>
 </table>
 <div id="addGameLink">
 	<?php echo $this->Html->link('Add Game', array('controller'=>'Game', 'action'=>'add'));?>
