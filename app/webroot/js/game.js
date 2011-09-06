@@ -1,4 +1,6 @@
 $(document).ready(function() {
+	$('#addGameLink, #clearGamesLink').button();// Fancify some links
+
 	/* Standard action for clicking an up arrow
 	 * Check what status the arrow is currently at based on class
 	 * If it was originally unclicked, set to clicked and popup dialog

@@ -11,6 +11,8 @@
  *
  * Views: /app/views/game/*
  * Controller: /app/controllers/game_controller.php
+ *
+ * @author Jon Phenow <j.phenow@gmail.com>
  */
 class Game extends AppModel {
 	// Key given with project definition

@@ -1,10 +1,5 @@
-<div id="addGameLink">
-	<?php echo $this->Html->link('Add Game', array('controller'=>'Game', 'action'=>'add'));?>
-	<?php echo $this->Html->link('Clear Games', array('controller'=>'Game', 'action'=>'clear'));?>
-</div>
-
 <div id="owned_table">
-Owned!
+<h2>Owned!</h2>
 <table>
 	<tr>
 		<th>Title</th>
@@ -18,7 +13,7 @@ Owned!
 </div>
 
 <div id="wanted_table">
-Wanted!
+<h2>Wanted!</h2>
 <table>
 	<tr>
 		<th id="voteTH">Votes</th>
@@ -35,6 +30,12 @@ Wanted!
 	</tr>
 	<?php endforeach?>
 </table>
+<div id="addGameLink">
+	<?php echo $this->Html->link('Add Game', array('controller'=>'Game', 'action'=>'add'));?>
+</div>
+<div id="clearGamesLink">
+	<?php echo $this->Html->link('Clear Games', array('controller'=>'Game', 'action'=>'clear'));?>
+</div>
 </div>
 <div id="ays">Are you sure you want to use your <b>one</b> action of the day?</div>
 <?php

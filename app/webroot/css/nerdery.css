@@ -10,7 +10,7 @@ body {
 }
 
 a {
-	color: #003399;
+	color: #2F8CAC;
 	background-color: transparent;
 	font-weight: normal;
 	padding: 5px;
@@ -24,6 +24,17 @@ h1 {
 	font-weight: normal;
 	margin: 0 0 14px 0;
 	padding: 14px 15px 10px 15px;
+	text-shadow: gray 0.1em 0.1em 0.1em
+}
+h2 {
+	color: #F2583E;
+	background-color: transparent;
+	border-bottom: 1px solid #D0D0D0;
+	font-size: 16px;
+	font-weight: normal;
+	margin: 0 0 14px 0;
+	padding: 14px 10px 10px 10px;
+	text-shadow: gray 0.1em 0.1em 0.1em;
 }
 
 code {
@@ -54,30 +65,39 @@ p.footer{
 	margin: 10px;
 	border: 1px solid #D0D0D0;
 	-webkit-box-shadow: 0 0 8px #D0D0D0;
+	min-height: 300px;
+	height: auto;
+	overflow: auto;
 }
 
 #content{
-	padding: 20px;
+	padding: 0px 20px 20px 10px;
 }
 
 /** nav **/
 #nav{
 	margin: 10px;
 	padding: 5px;
+	display: block;
+	position:relative;
 }
 #nav li{
-	width: 10%;
+	width: 80px;
 	height: 22px;
 	float: left;
 	list-style-type: none;
 	text-align: center;
 	border-bottom: 1px solid #D0D0D0;
 }
-#nav li:hover{
-	background-color: gray;
+#nav a{
+
 }
-#addGameLink{
-	padding: 15px;
+#nav a:hover{
+	background-color: #F7F3E8;
+}
+#addGameLink, #clearGamesLink {
+	margin: 10px;
+	padding: 5px;
 }
 
 /** Notices and Errors **/
@@ -165,15 +185,29 @@ div.error em {
 }
 
 /* tables */
+#owned_table,#wanted_table{
+	overflow: auto;
+	margin: 0px 0px 15px 0px;
+}
 #owned_table{
-	float:left;
+	float:right;
 	padding: 0px 15px;
+	position: relative;
+	display:block;
+	width: 25%;
+}
+#owned_table table{
+	width: 100%;
 }
 #wanted_table{
+	position: relative;
+	float: left;
+	display: block;
 	padding: 10px 15px;
+	width:70%
 }
 #wanted_table table{
-	width:350px;
+	width:100%;
 }
 tr:nth-child(odd){
 	background-color:#eee;
@@ -192,9 +226,16 @@ tr:nth-child(even):hover{
 	width: 80px;
 }
 table{
-	width: 175px;
 	height: auto;
 	border: 1px solid #d0d0d0;
 	margin: 10px 10px;
 	position:relative;
+}
+
+/*add game css*/
+form{
+	padding: 15px;
+}
+.submit{
+	padding-top: 10px;
 }

@@ -4,6 +4,8 @@
  * all regulated by a timed cookie
  * Model: /app/models/game.php
  * Views: /app/views/game/*
+ *
+ * @author Jon Phenow <j.phenow@gmail.com>
  */
 class GameController extends AppController {
 	
@@ -70,7 +72,7 @@ class GameController extends AppController {
 	 */
 	function add(){
 		$title = $this->data['Game']['title'];
-		if(strlen($title) > 0){
+		if(strlen($title) > 0){ // Is title set by POST?
 			if ($this->Game->hasTitle($title)) { // Simple attempt to see if we already own title
 				$this->_sendIndexMessage('We appear to already have this title listed', 'flash_failure');
 			}
@@ -91,13 +93,16 @@ class GameController extends AppController {
 			if(!$this->_canAct()){ // No form submitted, but try preemtively warning user of inability to act
 				$this->Session->setFlash('You cannot use another action until 12am', 'flash_failure');
 			}
+			$this->set('cssIncludes', array('ui-lightness/jquery-ui-1.8.16.custom')); // Page specific css and js
+			// both css and js reside in /app/webroot/{css,js}
+			$this->set('jsIncludes', array('jquery-1.6.2.min', 'jquery-ui-1.8.16.custom.min', 'game_add'));
 			$this->render(); // Renders /app/views/game/add.ctp
 		}
 	}
 
 	/* Executed before each action
 	 * Currently just sets Cookie
-	 * TODO consider moving action loose-end-tying to this method
+	 * TODO consider moving other action loose-end-tying to this method
 	 */
 	function beforeFilter(){
 		$this->Cookie->name = 'action_limit';
