@@ -16,7 +16,7 @@
  */
 class Game extends AppModel {
 	// Key given with project definition
-	private static $KEY = '11cadcc1719928fc5ec3d68ce7a24de0';
+	private static $KEY = '';
 	private static $OWNED = 'gotit';
 	private static $WANT = 'wantit';
 	var $useDbConfig = 'soap'; // Using soap 'db' method
