@@ -17,6 +17,7 @@ I'm planning to clear out some of that extra stuff to make it more of an example
 ## You also need:
 
 You'll also need to add this to your databse.php:
+
     class DATABASE_CONFIG {
         var $soap = array(
             'datasource' => 'soap',
