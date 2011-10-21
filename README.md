@@ -1,17 +1,31 @@
-There are only a few things that require attention when examining the application because a chunk of the code sitting in the directory is simply framework.
+## Introduction
 
-I didn't work under the /cake directory, only the /app directory. To limit even further, I only really worked within the confines of /app/{models,controllers,views}. There was a minor configuration made under the /app/config directory, which is described in more detail in the documentation for my 'game' model.
+This is a basic example of CakePHP using SoapSource to connect to a WSDL SOAP service so we can use it for our models. It luckily doesn't affect much of our work aside from configuration and a little tweaking, possibly, in the model.
 
-Also, if its of interest to anyone looking at the source, I utlized git, so if you'd like to have a gander at some of my workflow, which eventually turned into a real workflow, please have a look at the `git log` or use gitk.
+## Where to look
+
+My main changes that are of interest in this example are available in app/{models/game.php,controllers/game_controller.php}
+
+If you're really here out of interest for the soap example, though, most of the interesting is within the model.
+
+## A little explanation
+
+This is something I created as a code example for a company, so there's a decent amount of logic that you may just accept as something thats relatively unrelated to the SOAP example portion of this. I just figured I'd share my learning about my use of SoapSource. 
+
+I'm planning to clear out some of that extra stuff to make it more of an example-only repo.
+
+## You also need:
 
 You'll also need to add this to your databse.php:
-	class DATABASE_CONFIG {
-		var $soap = array(
-			'datasource' => 'soap',
-			'wsdl' => 'http://change.me'
-		);
-	}
+    class DATABASE_CONFIG {
+        var $soap = array(
+            'datasource' => 'soap',
+            'wsdl' => 'http://change.me'
+        );
+    }
 
-You may wish to have a look directly at SoapSource for additional options - https://github.com/Pagebakers/soapsource
+You may wish to have a look directly at [SoapSource](https://github.com/Pagebakers/soapsource) for additional options.
 
-Jon Phenow <j.phenow@gmail.com>
+### Me
+
+Jon Phenow j.phenow@gmail.com
