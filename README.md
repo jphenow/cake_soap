@@ -4,7 +4,7 @@ This is a basic example of CakePHP using SoapSource to connect to a WSDL SOAP se
 
 ## Where to look
 
-My main changes that are of interest in this example are available in app/{models/game.php,controllers/game_controller.php}
+My main changes that are of interest in this example are available in `app/{models/game.php,controllers/game_controller.php}`
 
 If you're really here out of interest for the soap example, though, most of the interesting is within the model.
 
