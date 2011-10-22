@@ -16,7 +16,7 @@
  */
 class Game extends AppModel {
 	// Key given with project definition
-	private static $KEY = '';
+	private static $KEY = '11cadcc1719928fc5ec3d68ce7a24de0 ';
 	private static $OWNED = 'gotit';
 	private static $WANT = 'wantit';
 	var $useDbConfig = 'soap'; // Using soap 'db' method
@@ -80,7 +80,13 @@ class Game extends AppModel {
 	 * @return status return from SOAP submit
 	 */
 	function cakeAddGame($title) {
-		return $this->addGame(array(self::$KEY, $title));
+		$title = trim($title);
+		$title_after = filter_var($title, FILTER_SANITIZE_STRING);
+		$title_after = filter_var($title_after, FILTER_SANITIZE_SPECIAL_CHARS);
+		if (is_null($title) || !$title || strlen($title) < 1 || $title != $title_after) {
+			return false;
+		}
+		else return $this->addGame(array(self::$KEY, $title));
 	}
 
 	/* Internal help function for getting all games from SOAP
@@ -94,7 +100,7 @@ class Game extends AppModel {
 	 * @param $condition condion to use in test, for which status of game to get
 	 * @return set of games matching condition
 	 */
-	private function getSpecificGames( $condition ) {
+	private function getSpecificGames($condition) {
 		$games = $this->cakeGetGames();
 		$keep = array();
 		foreach ($games as $game) {
