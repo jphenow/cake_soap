@@ -30,7 +30,7 @@ if(isset($jsIncludes)){
 <body>
 
 <div id="container">
-	<h1>The Nerdery's Xbox 360 rating system</h1>
+	<h1>Game rating/tracking system</h1>
 
 		<div id="content">
 			<ul id="nav">
